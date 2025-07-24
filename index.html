@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d47a1" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Mój Organizer</title>
+</head>
+<body>
+  <header>
+    <h1>Mój Organizer</h1>
+    <nav>
+      <button onclick="switchTab('tasks')">✅ Zadania</button>
+      <button onclick="switchTab('reminders')">⏰ Przypomnienia</button>
+      <button onclick="switchTab('calendar')">📅 Kalendarz</button>
+      <button onclick="switchTab('shopping')">🛒 Zakupy</button>
+      <button onclick="toggleDarkMode()">🌓 Tryb</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tasks" class="tab hidden">
+  <div class="tasks section">
+    <h2>✅ Zadania</h2>
+    <input id="taskInput" type="text" placeholder="Dodaj zadanie">
+    <input id="taskDate" type="datetime-local">
+    <button onclick="addTask()">➕</button>
+    <ul id="taskList"></ul>
+  </div>
+</section>
+
+    <section id="reminders" class="tab hidden">
+      <h2>⏰ Przypomnienia</h2>
+      <div class="input-group">
+        <input id="reminderText" placeholder="Treść" />
+        <input id="reminderDate" type="datetime-local" />
+        <button onclick="addReminder()">＋</button>
+      </div>
+      <ul id="reminderList"></ul>
+    </section>
+
+    <section id="calendar" class="tab hidden">
+      <h2>📅 Kalendarz</h2>
+      <div class="calendar-header">
+        <button onclick="prevMonth()">←</button>
+        <h3 id="calendarTitle"></h3>
+        <button onclick="nextMonth()">→</button>
+      </div>
+      <div id="calendarGrid" class="calendar-grid"></div>
+</section>  
+
+    <section id="shopping" class="tab hidden">
+      <div class="shopping-section">
+        <h2>🛒 Lista zakupów</h2>
+        <div class="shopping-input-container">
+  <input type="text" id="productInput" placeholder="Dodaj produkt">
+  <input type="number" id="quantityInput" placeholder="Szt." min="1" value="1" style="width: 70px;">
+  <button onclick="addProduct()">+</button>
+</div>
+        <div class="shopping-list" id="shoppingList"></div>
+      </div>
+      <p id="shoppingSummary" style="margin-top: 12px; font-weight: 600;"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

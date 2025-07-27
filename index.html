@@ -27,7 +27,8 @@
         <h2>✅ Zadania</h2>
         <div class="input-group">
           <input id="taskInput" type="text" placeholder="Dodaj zadanie">
-          <input id="taskDate" type="datetime-local" placeholder="Data i godzina">
+<label for="taskDate">🗓️ Wybierz datę i godzinę:</label>
+<input id="taskDate" type="datetime-local">
           <button onclick="addTask()">➕</button>
         </div>
         <ul id="taskList"></ul>
@@ -39,7 +40,8 @@
         <h2>⏰ Przypomnienia</h2>
         <div class="input-group">
           <input id="reminderText" placeholder="Treść" />
-          <input id="reminderDate" type="datetime-local" placeholder="Data i godzina" />
+<label for="reminderDate">🗓️ Wybierz datę i godzinę:</label>
+<input id="reminderDate" type="datetime-local" />
           <button onclick="addReminder()">＋</button>
         </div>
         <ul id="reminderList"></ul>

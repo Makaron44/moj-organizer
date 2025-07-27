@@ -292,3 +292,9 @@ li.done {
     margin: 0;
   }
 }
+label {
+  display: block;
+  margin: 0.5em 0 0.3em;
+  font-weight: 600;
+  color: var(--text);
+}

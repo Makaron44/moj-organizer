@@ -7,7 +7,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 
   background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
-  background-image: url('/images/background.jpg');
+  background-image: url('images/background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;

@@ -1,19 +1,6 @@
-/* Czcionka i bazowe ustawienia */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* === NOWOCZESNY, RESPONSYWNY STYLE.CSS DLA MÓJ ORGANIZER === */
 
-  background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
-  background-image: url('images/background.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
+/* Podstawowe zmienne i tryby kolorów */
 :root {
   --bg: #f9f9f9;
   --text: #1c1c1e;
@@ -32,11 +19,25 @@ body {
   --shadow: rgba(0, 0, 0, 0.4);
 }
 
-/* Główne elementy */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+  background-image: url('images/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
 header {
   background: var(--primary);
   color: white;
-  padding: 1.2em;
+  padding: 1rem;
   text-align: center;
   position: sticky;
   top: 0;
@@ -48,19 +49,19 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5em;
-  margin-top: 1em;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 nav button {
   background: white;
   color: var(--primary);
   border: none;
-  padding: 0.5em 1.2em;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: all 0.2s;
   box-shadow: 0 1px 3px var(--shadow);
 }
 
@@ -69,58 +70,63 @@ nav button:hover {
   color: white;
 }
 
-/* Sekcje */
+/* Układ sekcji */
 main {
-  padding: 2em 1em;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .tab {
-  padding: 1.5em;
-  max-width: 600px;
-  margin: auto;
   background: var(--card);
   border-radius: 16px;
+  padding: 1.5rem;
   box-shadow: 0 4px 10px var(--shadow);
-  transition: 0.3s ease;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hidden {
   display: none;
 }
 
-/* Inputy i przyciski */
-.input-group {
+/* Wspólne inputy i przyciski */
+.input-group,
+.shopping-input-container {
   display: flex;
-  gap: 0.5em;
-  margin-bottom: 1em;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
-input {
+input,
+textarea {
   flex: 1;
-  padding: 0.75em;
+  padding: 0.75rem;
   border: none;
   border-radius: 12px;
   background: var(--input);
   color: var(--text);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  font-size: 1rem;
 }
 
 button {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 0.75em 1.2em;
+  padding: 0.6rem 1rem;
   border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.2s;
 }
 
 button:hover {
-  opacity: 0.9;
+  background: #1e40af;
 }
 
-/* Listy */
+/* Lista zadań i przypomnień */
 ul {
   list-style: none;
   padding: 0;
@@ -128,15 +134,15 @@ ul {
 
 li {
   background: var(--card);
-  margin-bottom: 0.75em;
-  padding: 0.75em 1em;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
   border-radius: 12px;
   box-shadow: 0 2px 6px var(--shadow);
-  cursor: pointer;
-  transition: background 0.2s;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 li.done {
@@ -144,90 +150,34 @@ li.done {
   opacity: 0.6;
 }
 
-/* Pasek przypomnienia */
-.reminder-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff3cd;
-  color: #856404;
-  padding: 1em;
-  font-weight: 600;
-  border-bottom: 2px solid #ffeeba;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  z-index: 9999;
-  text-align: center;
-  font-size: 1rem;
-}
-
-/* Popup notatki */
-.note-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--card);
-  padding: 1em;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 10000;
+/* Kalendarz */
+.calendar-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  width: 90%;
-  max-width: 400px;
-}
-
-.note-popup textarea {
-  min-height: 100px;
-  border-radius: 8px;
-  padding: 0.75em;
-  resize: vertical;
-  border: none;
-  background: var(--input);
-  color: var(--text);
-}
-
-/* Kalendarz nowoczesny */
-.calendarContainer {
-  margin-top: 1em;
-}
-
-.calendarTitle {
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
-  margin-top: 20px;
+  gap: 0.5rem;
 }
 
 .day, .day-name {
   text-align: center;
-  padding: 8px;
+  padding: 0.75rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--input);
 }
 
 .day {
-  background: var(--input);
   cursor: pointer;
-  transition: 0.2s;
   position: relative;
 }
 
-.day:hover {
-  background: var(--primary);
-  color: white;
-}
-
 .day.today {
-  background-color: gold;
+  background: gold;
   font-weight: bold;
 }
 
@@ -236,196 +186,79 @@ li.done {
   bottom: 5px;
   right: 5px;
 }
-/* Sekcja zakupów - nowoczesna i responsywna */
-.shopping-section {
-  max-width: 600px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  padding: 24px;
-  transition: all 0.3s ease;
-}
 
-.shopping-section h2 {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-/* Styl dla trybu ciemnego */
-body.dark .shopping-section {
-  background: #1e1e1e;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-}
-
-.shopping-input-container {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.shopping-input-container input[type="text"] {
-  flex: 1;
-  padding: 12px 16px;
-  border: none;
-  border-radius: 8px;
-  background: #f0f0f0;
-  font-size: 1rem;
-  color: #333;
-}
-
-body.dark .shopping-input-container input[type="text"] {
-  background: #333;
-  color: #fff;
-}
-
-.shopping-input-container button {
-  background: #2563eb;
-  border: none;
-  color: #fff;
-  padding: 0 16px;
-  font-size: 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.shopping-input-container button:hover {
-  background: #1d4ed8;
-}
-
+/* Zakupy */
 .shopping-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.5rem;
 }
 
 .shopping-item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  background: #f9f9f9;
-  padding: 12px 16px;
-  border-radius: 10px;
-  transition: box-shadow 0.2s;
-  gap: 12px;
-}
-
-body.dark .shopping-item {
-  background: #2a2a2a;
-}
-
-.shopping-item:hover {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
-
-.shopping-item label {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  flex: 1;
-  cursor: pointer;
-}
-
-.shopping-item input[type="checkbox"] {
-  transform: scale(1.3);
-  margin: 0;
-}
-
-.shopping-item .product-name {
-  font-size: 1rem;
-  word-break: break-word;
-}
-
-body.dark .shopping-item .product-name {
-  color: #fff;
+  background: var(--input);
+  padding: 0.75rem;
+  border-radius: 10px;
 }
 
 .shopping-item.checked {
-  background-color: #d1fae5; /* zielonkawe tło */
-}
-
-.shopping-item.checked .product-name {
+  background: #d1fae5;
   text-decoration: line-through;
-  color: #065f46; /* ciemnozielony tekst */
-  font-weight: 600;
+  color: #065f46;
+  font-weight: bold;
 }
 
-.shopping-item button {
-  background: #2563eb;
-  border: none;
-  padding: 8px;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Przypomnienie na dzisiaj */
+.reminder-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fffae6;
+  color: #333;
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.shopping-item button:hover {
-  background: #dc2626;
+/* Notatka kalendarza */
+.note-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 90%;
+  max-width: 400px;
 }
 
 /* Responsywność */
-@media (max-width: 500px) {
-  .shopping-input-container {
+@media (max-width: 600px) {
+  nav {
     flex-direction: column;
   }
 
-  .shopping-input-container button {
-    width: 100%;
-  }
-
-  .shopping-item {
+  .input-group, .shopping-input-container {
     flex-direction: column;
-    align-items: flex-start;
   }
 
-  .shopping-item button {
-    align-self: flex-end;
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
   }
 }
-/* Styl trybu ciemnego dla sekcji zakupów */
-body.dark .shopping-section {
-  background: #1f1f1f;
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.05);
-}
 
-body.dark .shopping-section h2 {
-  color: #f1f1f1;
-}
-
-body.dark .shopping-input-container input[type="text"] {
-  background: #333;
-  color: #fff;
-}
-
-body.dark .shopping-list {
-  color: #fff;
-}
-
-body.dark .shopping-item {
-  background: #2a2a2a;
-}
-
-body.dark .shopping-item .product-name {
-  color: #fff;
-}
-
-body.dark .shopping-item.checked .product-name {
-  color: #888;
-}
-
-body.dark .shopping-item button {
-  background: #3b82f6;
-}
-
-body.dark .shopping-item button:hover {
-  background: #ef4444;
-}
-/* ✨ Animacje fade */
+/* Animacje */
 .fade-in {
   animation: fadeInSlide 0.3s ease forwards;
 }
@@ -434,7 +267,6 @@ body.dark .shopping-item button:hover {
   animation: fadeOutShrink 0.3s ease forwards;
 }
 
-/* Keyframes */
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -459,37 +291,4 @@ body.dark .shopping-item button:hover {
     height: 0;
     margin: 0;
   }
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-#shoppingSummary.animate {
-  animation: pulse 0.4s ease;
-}
-.container {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-.tasks input[type="text"],
-.tasks input[type="datetime-local"] {
-  margin-right: 5px;
-  margin-bottom: 10px;
-}
-.reminder-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fffae6;
-  color: #333;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }

@@ -26,7 +26,7 @@ body {
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 
-  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* jasnoniebieski gradient */
+  background: linear-gradient(135deg, #e0fcfa, #d7cff3); /* jasnoniebieski gradient */
   background-attachment: fixed;
   background-size: cover;
 }

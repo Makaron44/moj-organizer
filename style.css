@@ -296,3 +296,8 @@ label {
   font-weight: 600;
   color: var(--text);
 }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}

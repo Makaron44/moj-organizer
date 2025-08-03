@@ -184,6 +184,8 @@ li.done {
   gap: 6px;
   width: 100%;
   box-sizing: border-box;
+   max-width: 100%;
+  margin: 0 auto;
 }
 
 .day, .day-name {
@@ -371,6 +373,7 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 
 

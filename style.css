@@ -26,7 +26,7 @@ body {
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
 
-  background: linear-gradient(135deg, #e1fce0, #ebcff3); /* jasnoniebieski gradient */
+  background: linear-gradient(135deg, #e1fce0, #ebcff3);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -89,7 +89,7 @@ main {
   display: none;
 }
 
-/* Wspólne inputy i przyciski */
+/* Inputy i przyciski */
 .input-group,
 .shopping-input-container {
   display: flex;
@@ -126,7 +126,7 @@ button:hover {
   background: #1e40af;
 }
 
-/* Lista zadań i przypomnień */
+/* Lista zadań */
 ul {
   list-style: none;
   padding: 0;
@@ -165,9 +165,9 @@ li.done {
   margin-top: 10px;
   width: 100%;
   max-width: 420px;
-  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 .day, .day-name {
@@ -181,9 +181,6 @@ li.done {
 .day {
   cursor: pointer;
   position: relative;
-  min-width: 40px;
-  max-width: 100%;
-  word-break: break-word;
 }
 
 .day.today {
@@ -220,7 +217,7 @@ li.done {
   font-weight: bold;
 }
 
-/* Przypomnienie na dzisiaj */
+/* Przypomnienie */
 .reminder-bar {
   position: fixed;
   top: 0;
@@ -235,7 +232,7 @@ li.done {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Notatka kalendarza */
+/* Notatka popup */
 .note-popup {
   position: fixed;
   top: 50%;
@@ -253,7 +250,7 @@ li.done {
   max-width: 400px;
 }
 
-/* Responsywność */
+/* RESPONSYWNOŚĆ */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -262,16 +259,9 @@ li.done {
   .input-group, .shopping-input-container {
     flex-direction: column;
   }
-  #calendar {
-  text-align: center;
 }
 
-  .calendar-grid {
-    grid-template-columns: repeat(7, 1fr);
-  }
-}
-
-/* Animacje */
+/* ANIMACJE */
 .fade-in {
   animation: fadeInSlide 0.3s ease forwards;
 }
@@ -305,19 +295,19 @@ li.done {
     margin: 0;
   }
 }
+
 label {
   display: block;
   margin: 0.5em 0 0.3em;
   font-weight: 600;
   color: var(--text);
 }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
 }
-
-
 
 
 

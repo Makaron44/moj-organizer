@@ -164,19 +164,18 @@ li.done {
   gap: 5px;
   margin-top: 10px;
   width: 100%;
-  max-width: 100%;
+  max-width: 420px;
   box-sizing: border-box;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .day, .day-name {
   text-align: center;
-  padding: 0.75rem;
+  padding: 0.6rem;
   border-radius: 8px;
   background: var(--input);
-  min-width: 40px;
-  max-width: 100%;
-  word-break: break-word;
+  font-size: 0.9rem;
 }
 
 .day {
@@ -317,6 +316,7 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 
 

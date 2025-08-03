@@ -107,6 +107,8 @@ textarea {
   background: var(--input);
   color: var(--text);
   font-size: 1rem;
+  width: 100%;
+  min-width: 0;
 }
 
 button {
@@ -304,5 +306,6 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 

@@ -163,6 +163,7 @@ li.done {
   margin-top: 10px;
   max-width: 100%;
   box-sizing: border-box;
+}
 
 .day, .day-name {
   text-align: center;
@@ -303,4 +304,5 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 

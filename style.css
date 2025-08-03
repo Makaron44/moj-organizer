@@ -256,8 +256,55 @@ li.done {
     flex-direction: column;
   }
 
-  .input-group, .shopping-input-container {
+  .tab {
+    padding: 1rem;
+    margin: 0 0.5rem;
+    width: auto;
+  }
+
+  .input-group,
+  .shopping-input-container {
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  .day, .day-name {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .shopping-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .shopping-item button {
+    align-self: flex-end;
+    width: auto;
+  }
+
+  .note-popup {
+    width: 95%;
+    max-width: 95%;
+    padding: 1rem;
   }
 }
 
@@ -308,6 +355,7 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 
 

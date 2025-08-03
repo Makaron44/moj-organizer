@@ -163,8 +163,10 @@ li.done {
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   margin-top: 10px;
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 .day, .day-name {
@@ -172,11 +174,17 @@ li.done {
   padding: 0.75rem;
   border-radius: 8px;
   background: var(--input);
+  min-width: 40px;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .day {
   cursor: pointer;
   position: relative;
+  min-width: 40px;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .day.today {
@@ -255,6 +263,9 @@ li.done {
   .input-group, .shopping-input-container {
     flex-direction: column;
   }
+  #calendar {
+  text-align: center;
+}
 
   .calendar-grid {
     grid-template-columns: repeat(7, 1fr);
@@ -306,6 +317,7 @@ label {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 
 
